@@ -1,0 +1,34 @@
+<div class="row" *ngIf="workers.length > 0">
+  <div class="col-12">
+    <h5>{{title}}</h5>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Phone</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let worker of workers">
+      <th scope="row">{{worker.id}}</th>
+      <td>{{worker.name}}</td>
+      <td>{{worker.surname}}</td>
+      <td>{{worker.phone}}</td>
+      <td>
+        <button (click)="onDeleteWorker(worker.id)" class="btn btn-outline-danger btn-sm mr-2">Delete</button>
+        <ngbd-modal-edit
+          [id]="worker.id"
+          [name]="worker.name"
+          [surname]="worker.surname"
+          [phone]="worker.phone"
+          (editWorker)="onEditWorker($event)"
+        ></ngbd-modal-edit>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

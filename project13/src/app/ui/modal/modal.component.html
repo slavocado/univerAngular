@@ -1,0 +1,52 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Worker Edit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editWorkerForm">
+      <div class="form-group">
+
+        <input
+          formControlName="newName"
+          type="text"
+          class="form-control"
+          placeholder="name"
+        >
+        <div class="alert alert-danger"
+             *ngIf="editWorkerForm.controls['newName'].invalid && editWorkerForm.controls['newName'].touched">
+          Enter name
+        </div>
+        <input
+          formControlName="newSurname"
+          type="text"
+          class="form-control"
+          placeholder="surname"
+        >
+        <div class="alert alert-danger"
+             *ngIf="editWorkerForm.controls['newSurname'].invalid && editWorkerForm.controls['newSurname'].touched">
+          Enter surname
+        </div>
+        <input
+          type="tel"
+          formControlName="newPhone"
+          class="form-control mt-2"
+          placeholder="phone"
+          [textMask]="{mask: mask}"
+        >
+        <div class="alert alert-danger"
+             *ngIf="editWorkerForm.controls['newPhone'].invalid && editWorkerForm.controls['newPhone'].touched">
+          Enter phone
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="close(modal)">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-sm btn-outline-warning" (click)="open(content)">Edit</button>
