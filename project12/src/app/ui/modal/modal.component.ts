@@ -31,8 +31,10 @@ export class ModalComponent implements OnInit {
   }
 
   close(modal){
-    this.onEditWorker(this.id, this.name, this.surname)
-    modal.close()
+    if(this.name != '' && this.surname != ''){
+      this.onEditWorker(this.id, this.name, this.surname)
+      modal.close()
+    }
   }
 
 
