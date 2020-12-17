@@ -45,7 +45,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="close(modal)">Save</button>
+    <button type="button" class="btn btn-outline-dark" [disabled]="editWorkerForm.invalid" (click)="close(modal)">Save</button>
   </div>
 </ng-template>
 

@@ -49,6 +49,6 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-outline-primary btn-sm mt-2" (click)="onAddWorker()">Add</button>
+      <button class="btn btn-outline-primary btn-sm mt-2" [disabled]="addWorkerForm.invalid" (click)="onAddWorker()">Add</button>
     </div>
   </form>

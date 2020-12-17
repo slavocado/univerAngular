@@ -37,15 +37,7 @@ export class AddformWorkerComponent implements OnInit {
   }
 
   onAddWorker (){
-    let worker: MyWorker = {
-      name: this.addWorkerForm.value.name,
-      surname: this.addWorkerForm.value.surname,
-      type: this.addWorkerForm.value.type,
-      phone: this.addWorkerForm.value.phone,
-    };
-    if(worker.name !== '' && worker.surname !== '' && worker.phone !== ''){
-      this.addWorker.emit(worker);
-    }
+    this.addWorker.emit(this.addWorkerForm.value);
   }
 
 }
