@@ -1,0 +1,15 @@
+
+<app-add-worker></app-add-worker>
+
+  <div class="container">
+    <app-table-workers
+      [workers]="getByType(myWorkerType.tech)"
+      title="IT Department"
+    ></app-table-workers>
+
+    <app-table-workers
+      [workers]="getByType(myWorkerType.sales)"
+      title="Sales Department"
+    ></app-table-workers>
+  </div>
+

@@ -1,0 +1,14 @@
+{
+  "workers": [
+    {
+      "id": 1,
+      "name": "Ivan",
+      "surname": "Ivanov",
+      "patronymic": "Ivanovich",
+      "email": "fff@gmail.com",
+      "phone": "+8(999) 444-3333",
+      "birthday": "12-42-43",
+      "type": 0
+    }
+  ]
+}
