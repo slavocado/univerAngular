@@ -42,22 +42,22 @@ export class AppComponent implements OnInit{
   //   }
   // }
   //
-  // async onAddWorker(worker: MyWorker){
-  //   const id = this.workers.length > 0
-  //     ? this.workers[this.workers.length - 1].id + 1
-  //     : 0
-  //   worker.id = id;
-  //   // this.workers.push(worker);
-  //
-  //   try {
-  //     await this.httpWorkerService.postWorker(worker)
-  //   } catch (e) {
-  //     console.error(e);
-  //   } finally {
-  //     await this.getData()
-  //   }
-  // }
-  //
+  async onAddWorker(worker: MyWorker){
+    const id = this.workers.length > 0
+      ? this.workers[this.workers.length - 1].id + 1
+      : 0
+    worker.id = id;
+    // this.workers.push(worker);
+
+    try {
+      await this.httpWorkerService.postWorker(worker)
+    } catch (e) {
+      console.error(e);
+    } finally {
+      await this.getData()
+    }
+  }
+
   // async onEditWorker(editingWorker){
   //   try {
   //     await this.httpWorkerService.putWorker(editingWorker)

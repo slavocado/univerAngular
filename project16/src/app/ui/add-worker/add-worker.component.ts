@@ -1,5 +1,8 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, Output, EventEmitter} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MyWorkerType} from "../../shared/worker.model";
+import {MyWorker} from "../../shared/worker.model";
 
 @Component({
   selector: 'app-add-worker',
@@ -8,7 +11,10 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class AddWorkerComponent implements OnInit {
 
-  someDataVar: string = ''
+  myWorkerType = MyWorkerType;
+
+  @Output() addWorker =
+    new EventEmitter<MyWorker>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -17,14 +23,19 @@ export class AddWorkerComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddWorkerDialog, {
-      width: '250px',
-      data: {name: 'eeee'}
+      width: '350px',
+      data: {heading: 'Add worker'}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.someDataVar = result;
+      result.type = +result.type;
+      console.log(result);
+      this.submit(result);
     });
+  }
+
+  submit(worker: MyWorker){
+    this.addWorker.emit(worker);
   }
 
 }
@@ -33,15 +44,40 @@ export class AddWorkerComponent implements OnInit {
   selector: 'add-worker-dialog',
   templateUrl: 'add-worker-dialog.html',
 })
-export class AddWorkerDialog {
+export class AddWorkerDialog implements OnInit{
+
+  addWorkerForm: FormGroup;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  public mask = ['+', /[1-9]/, '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+
+  getErrorMessage(str: string) {
+    if (this.addWorkerForm.controls[str].hasError('required')) {
+      return 'You must enter a value';
+    } else if (this.addWorkerForm.controls[str].hasError('email') ) {
+      return 'enter valid email';
+    }
+  }
 
   constructor(
     public dialogRef: MatDialogRef<AddWorkerDialog>,
-    @Inject(MAT_DIALOG_DATA) public data) {}
+    @Inject(MAT_DIALOG_DATA) public data,
+    private fb: FormBuilder) {}
   // @Inject(MAT_DIALOG_DATA) public data: DialogData
+
+  ngOnInit(): void {
+    this.addWorkerForm = this.fb.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      patronymic: ['', Validators.required],
+      type: [0, Validators.required],
+      phone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      birthday: ['', Validators.required]
+    })
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

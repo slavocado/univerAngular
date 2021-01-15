@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MyWorker} from "../../../../../project15/src/app/shared/worker.model";
+import {MyWorker} from '../../shared/worker.model';
 
 @Component({
   selector: 'app-table-workers',

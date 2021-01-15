@@ -9,6 +9,16 @@
       "phone": "+8(999) 444-3333",
       "birthday": "12-42-43",
       "type": 0
+    },
+    {
+      "name": "r",
+      "surname": "r",
+      "patronymic": "r",
+      "type": 1,
+      "phone": "+8(443) 535-3453",
+      "email": "f@d.c",
+      "birthday": "2021-01-28T21:00:00.000Z",
+      "id": 3
     }
   ]
 }
