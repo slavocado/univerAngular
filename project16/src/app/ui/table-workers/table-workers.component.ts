@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {MyWorker} from '../../shared/worker.model';
 
 @Component({
@@ -11,6 +11,9 @@ export class TableWorkersComponent implements OnInit {
   @Input() workers: MyWorker[] = [];
   @Input() title: string = '';
 
+  @Output() editWorker =
+    new EventEmitter<object>();
+
   displayedColumns: string[] = ['id', 'name', 'surname', 'age', 'actions'];
 
   constructor() { }
@@ -22,6 +25,10 @@ export class TableWorkersComponent implements OnInit {
       const birthdayDate = new Date(birthday);
       const timeDiff = Math.abs(Date.now() - birthdayDate.getTime());
       return Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+  }
+
+  onEditWorker(worker){
+    this.editWorker.emit(worker)
   }
 
 }

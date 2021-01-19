@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>{{data.heading + ' ' + worker.name}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editWorkerForm" class="form-container">
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker name</mat-label>
+      <input matInput placeholder="Ivan" formControlName="name" required>
+      <mat-error *ngIf="editWorkerForm.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker surname</mat-label>
+      <input matInput placeholder="Ivanov" formControlName="surname" required>
+      <mat-error *ngIf="editWorkerForm.controls['surname'].invalid">{{getErrorMessage('surname')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker patronymic</mat-label>
+      <input matInput placeholder="Ivanovich" formControlName="patronymic" required>
+      <mat-error *ngIf="editWorkerForm.controls['patronymic'].invalid">{{getErrorMessage('patronymic')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker department</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="0">IT Department</mat-option>
+        <mat-option value="1">Sales Department</mat-option>
+        <mat-option value="2">Delivery Department</mat-option>
+        <mat-option value="3">Legal Department</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker email</mat-label>
+      <input matInput placeholder="ex@gmail.com" formControlName="email" required>
+      <mat-error *ngIf="editWorkerForm.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker phone</mat-label>
+      <input type="tel" matInput placeholder="+8(443) 535-3453" formControlName="phone" [textMask]="{mask: mask}" required>
+      <mat-error *ngIf="editWorkerForm.controls['phone'].invalid">{{getErrorMessage('phone')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%" appearance="fill">
+      <mat-label>Worker birthday</mat-label>
+      <input matInput placeholder="1/21/2021" [matDatepicker]="picker" formControlName="birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="editWorkerForm.controls['birthday'].invalid">{{getErrorMessage('birthday')}}</mat-error>
+    </mat-form-field>
+
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Go back</button>
+  <button mat-button [disabled]="editWorkerForm.invalid" [mat-dialog-close]="editWorkerForm.value">Edit</button>
+</div>

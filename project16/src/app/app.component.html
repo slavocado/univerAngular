@@ -5,21 +5,25 @@
     <app-table-workers
       [workers]="getByType(myWorkerType.tech)"
       title="IT Department"
+      (editWorker)="onEditWorker($event)"
     ></app-table-workers>
 
     <app-table-workers
       [workers]="getByType(myWorkerType.sales)"
       title="Sales Department"
+      (editWorker)="onEditWorker($event)"
     ></app-table-workers>
 
     <app-table-workers
       [workers]="getByType(myWorkerType.delivery)"
       title="Delivery Department"
+      (editWorker)="onEditWorker($event)"
     ></app-table-workers>
 
     <app-table-workers
       [workers]="getByType(myWorkerType.legal)"
       title="Legal Department"
+      (editWorker)="onEditWorker($event)"
     ></app-table-workers>
   </div>
 
