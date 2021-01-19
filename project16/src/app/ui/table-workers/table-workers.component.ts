@@ -13,6 +13,8 @@ export class TableWorkersComponent implements OnInit {
 
   @Output() editWorker =
     new EventEmitter<object>();
+  @Output() deleteWorker =
+    new EventEmitter<number>();
 
   displayedColumns: string[] = ['id', 'name', 'surname', 'age', 'actions'];
 
@@ -29,6 +31,10 @@ export class TableWorkersComponent implements OnInit {
 
   onEditWorker(worker){
     this.editWorker.emit(worker)
+  }
+
+  onDeleteWorker(id: number){
+    this.deleteWorker.emit(id)
   }
 
 }

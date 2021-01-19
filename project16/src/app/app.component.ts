@@ -32,17 +32,17 @@ export class AppComponent implements OnInit{
       return this.workers.filter(worker => worker.type === type);
     }
   }
-  //
-  // async onDeleteWorker(id: number){
-  //   try {
-  //     await this.httpWorkerService.deleteWorker(id)
-  //   } catch (e) {
-  //     console.error(e)
-  //   } finally {
-  //     await this.getData()
-  //   }
-  // }
-  //
+
+  async onDeleteWorker(id: number){
+    try {
+      await this.httpWorkerService.deleteWorker(id)
+    } catch (e) {
+      console.error(e)
+    } finally {
+      await this.getData()
+    }
+  }
+
   async onAddWorker(worker: MyWorker){
     const id = this.workers.length > 0
       ? this.workers[this.workers.length - 1].id + 1
