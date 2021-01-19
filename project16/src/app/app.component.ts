@@ -28,7 +28,9 @@ export class AppComponent implements OnInit{
   }
 
   getByType(type: number) {
-    return this.workers.filter(worker => worker.type === type);
+    if(this.workers){
+      return this.workers.filter(worker => worker.type === type);
+    }
   }
   //
   // async onDeleteWorker(id: number){
