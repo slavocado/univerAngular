@@ -1,23 +1,33 @@
 {
   "workers": [
     {
-      "id": 1,
       "name": "Ivan",
       "surname": "Ivanov",
       "patronymic": "Ivanovich",
-      "email": "fff@gmail.com",
-      "phone": "+8(999) 444-3333",
-      "birthday": "12-42-43",
-      "type": 0
+      "type": 0,
+      "phone": "+8(443) 535-3453",
+      "email": "a@gmail.com",
+      "birthday": "1997-02-18T21:00:00.000Z",
+      "id": 1
     },
     {
-      "name": "r",
-      "surname": "r",
-      "patronymic": "r",
+      "name": "Boris",
+      "surname": "Borisov",
+      "patronymic": "Borisovich",
+      "type": 2,
+      "phone": "+4(234) 242-3432",
+      "email": "b@gmail.com",
+      "birthday": "1970-12-18T21:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "Vlad",
+      "surname": "Vladov",
+      "patronymic": "Vladovich",
       "type": 1,
-      "phone": "+8(443) 535-3453",
-      "email": "f@d.c",
-      "birthday": "2021-01-28T21:00:00.000Z",
+      "phone": "+4(324) 234-234_",
+      "email": "c@gmail.com",
+      "birthday": "2000-10-30T21:00:00.000Z",
       "id": 3
     }
   ]
