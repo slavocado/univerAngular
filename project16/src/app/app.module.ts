@@ -21,6 +21,7 @@ import {TextMaskModule} from "angular2-text-mask";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
 import {EditWorkerComponent, EditWorkerDialog} from './ui/table-workers/edit-worker/edit-worker.component';
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {EditWorkerComponent, EditWorkerDialog} from './ui/table-workers/edit-wor
     MatSelectModule,
     TextMaskModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSortModule
   ],
   providers: [
     MatDatepickerModule

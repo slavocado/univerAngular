@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
   async getData(){
     try {
       this.workers = await this.httpWorkerService.getWorkers();
+      console.log(this.workers)
     } catch (e){
       console.error(e)
     }
