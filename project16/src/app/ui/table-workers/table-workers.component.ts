@@ -63,6 +63,11 @@ export class TableWorkersComponent implements OnInit, AfterViewInit, OnChanges {
     // }
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   calculateAge(birthday) {
     const birthdayDate = new Date(birthday);
     const timeDiff = Math.abs(Date.now() - birthdayDate.getTime());
