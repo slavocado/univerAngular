@@ -7,6 +7,13 @@
     (editWorker)="onEditWorker($event)"
     (deleteWorker)="onDeleteWorker($event)"
   ></app-table-workers>
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.sales)"
+    title="Sales Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+
   <!-- <app-table-workers
       [workers]="getByType(myWorkerType.tech)"
       title="IT Department"

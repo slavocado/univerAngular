@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   myWorkerType = MyWorkerType;
 
   dataSources: {
-    type: number | string;
+    type: number;
     source: MatTableDataSource<any>;
   }[] = [];
 
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   /**
-   * Функция выдает  выдавала нужный dataSource и отправляет его в дочерний компонент
+   * Функция выдает нужный dataSource и отправляет его в дочерний компонент
    * (аналогично предыдущему решению) толькол dataSource
    * @param type
    */

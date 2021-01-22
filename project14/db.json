@@ -1,0 +1,39 @@
+{
+  "workers": [
+    {
+      "id": 1,
+      "name": "Ivan",
+      "surname": "Ivanov",
+      "phone": "+8(999) 444-3333",
+      "type": 0
+    },
+    {
+      "id": 2,
+      "name": "Petrrrrrrr",
+      "surname": "petrov",
+      "phone": "+8(999) 444-3444",
+      "type": 1
+    },
+    {
+      "id": 3,
+      "name": "Sidor",
+      "surname": "Sidorov",
+      "phone": "+8(999) 777-6663",
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "Vasiliy",
+      "surname": "Vasiliev",
+      "phone": "+8(999) 388-3645",
+      "type": 3
+    },
+    {
+      "name": "dff",
+      "surname": "dfdf",
+      "type": 3,
+      "phone": "+3(423) 432-4324",
+      "id": 5
+    }
+  ]
+}
