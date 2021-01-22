@@ -41,14 +41,24 @@
       "id": 4
     },
     {
-      "name": "f",
-      "surname": "g",
-      "patronymic": "f",
-      "type": 0,
-      "phone": "+8(443) 535-3453",
-      "email": "f@d.c",
-      "birthday": "2021-01-21T21:00:00.000Z",
+      "name": "Vlad",
+      "surname": "Vladov",
+      "patronymic": "Vladovich",
+      "type": 1,
+      "phone": "+4(324) 234-2347",
+      "email": "c@gmail.com",
+      "birthday": "1967-10-30T21:00:00.000Z",
       "id": 5
+    },
+    {
+      "name": "Kolya",
+      "surname": "Kolev",
+      "patronymic": "Kolevich",
+      "type": 1,
+      "phone": "+4(324) 234-2345",
+      "email": "c@gmail.com",
+      "birthday": "1998-10-30T21:00:00.000Z",
+      "id": 6
     }
   ]
 }

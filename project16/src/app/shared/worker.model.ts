@@ -6,6 +6,7 @@ export interface MyWorker {
   phone: string;
   email: string;
   birthday: Date;
+  age?: number;
   id?: number;
 }
 

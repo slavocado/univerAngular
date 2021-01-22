@@ -31,6 +31,10 @@ export class AppComponent implements OnInit {
     } catch (e) {
       console.error(e);
     }
+
+    this.workers.forEach(worker => {
+      worker.age = this.calculateAge(worker.birthday);
+    })
     /**
      * После получения даных про работников из АПИ формируем массив dataSource для таблиц. Это сложно сделать
      * в дочерних компонентах т.к. данные из АПИ приходят условно в любое время а не при инициализации,
@@ -46,6 +50,12 @@ export class AppComponent implements OnInit {
         source: new MatTableDataSource(this.getByType(+value)),
       });
     }
+  }
+
+  calculateAge(birthday) {
+    const birthdayDate = new Date(birthday);
+    const timeDiff = Math.abs(Date.now() - birthdayDate.getTime());
+    return Math.floor(timeDiff / (1000 * 3600 * 24) / 365);
   }
 
   /**

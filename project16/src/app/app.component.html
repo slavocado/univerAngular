@@ -7,6 +7,7 @@
     (editWorker)="onEditWorker($event)"
     (deleteWorker)="onDeleteWorker($event)"
   ></app-table-workers>
+
   <app-table-workers
     [dataSource]="getDataSourceByType(myWorkerType.sales)"
     title="Sales Department"
@@ -14,31 +15,17 @@
     (deleteWorker)="onDeleteWorker($event)"
   ></app-table-workers>
 
-  <!-- <app-table-workers
-      [workers]="getByType(myWorkerType.tech)"
-      title="IT Department"
-      (editWorker)="onEditWorker($event)"
-      (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers>
-
     <app-table-workers
-      [workers]="getByType(myWorkerType.sales)"
-      title="Sales Department"
-      (editWorker)="onEditWorker($event)"
-      (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers>
-
-    <app-table-workers
-      [workers]="getByType(myWorkerType.delivery)"
+      [dataSource]="getDataSourceByType(myWorkerType.delivery)"
       title="Delivery Department"
       (editWorker)="onEditWorker($event)"
       (deleteWorker)="onDeleteWorker($event)"
     ></app-table-workers>
 
     <app-table-workers
-      [workers]="getByType(myWorkerType.legal)"
+      [dataSource]="getDataSourceByType(myWorkerType.legal)"
       title="Legal Department"
       (editWorker)="onEditWorker($event)"
       (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers> -->
+    ></app-table-workers>
 </div>
