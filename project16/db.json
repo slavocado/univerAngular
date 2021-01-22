@@ -21,18 +21,8 @@
       "id": 2
     },
     {
-      "name": "Vlad",
-      "surname": "Vladov",
-      "patronymic": "Vladovich",
-      "type": 1,
-      "phone": "+4(324) 234-234_",
-      "email": "c@gmail.com",
-      "birthday": "2000-10-30T21:00:00.000Z",
-      "id": 3
-    },
-    {
       "name": "v",
-      "surname": "v",
+      "surname": "vv",
       "patronymic": "v",
       "type": 0,
       "phone": "+4(543) 534-5345",

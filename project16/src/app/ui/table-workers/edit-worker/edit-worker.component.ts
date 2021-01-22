@@ -16,6 +16,8 @@ export class EditWorkerComponent implements OnInit {
   @Input() worker: MyWorker;
   @Output() editWorker =
     new EventEmitter<MyWorker>();
+  @Output() deleteWorker =
+    new EventEmitter<number>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -29,14 +31,22 @@ export class EditWorkerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      result.type = +result.type;
-      result.id = this.worker.id;
-      this.edit(result);
+      if (result === 'delete'){
+        this.onDeleteWorker(this.worker.id);
+      } else {
+        result.type = +result.type;
+        result.id = this.worker.id;
+        this.edit(result);
+      }
     });
   }
 
   edit(worker: MyWorker){
     this.editWorker.emit(worker);
+  }
+
+  onDeleteWorker(id: number) {
+    this.deleteWorker.emit(id);
   }
 }
 
@@ -66,6 +76,7 @@ export class EditWorkerDialog implements OnInit{
   // @Inject(MAT_DIALOG_DATA) public data: DialogData
 
   worker: MyWorker = this.data.worker;
+  // delete: string = 'delete';
 
   ngOnInit(): void {
     this.editWorkerForm = this.fb.group({

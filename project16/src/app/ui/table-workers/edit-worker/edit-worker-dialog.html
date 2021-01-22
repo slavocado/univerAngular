@@ -1,4 +1,7 @@
-<h1 mat-dialog-title>{{data.heading + ' ' + worker.name}}</h1>
+<h1 mat-dialog-title>{{data.heading + ' ' + worker.name}}
+  <button mat-stroked-button color="accent" [mat-dialog-close]="'delete'" >Delete</button>
+</h1>
+
 <div mat-dialog-content>
   <form [formGroup]="editWorkerForm" class="form-container">
 
