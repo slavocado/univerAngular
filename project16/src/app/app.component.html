@@ -1,8 +1,13 @@
+<app-add-worker (addWorker)="onAddWorker($event)"></app-add-worker>
 
-<app-add-worker (addWorker)=(onAddWorker($event))></app-add-worker>
-
-  <div class="container">
-    <app-table-workers
+<div class="container">
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.tech)"
+    title="IT Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+  <!-- <app-table-workers
       [workers]="getByType(myWorkerType.tech)"
       title="IT Department"
       (editWorker)="onEditWorker($event)"
@@ -28,6 +33,5 @@
       title="Legal Department"
       (editWorker)="onEditWorker($event)"
       (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers>
-  </div>
-
+    ></app-table-workers> -->
+</div>
