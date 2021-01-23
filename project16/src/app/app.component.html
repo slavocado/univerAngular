@@ -1,31 +1,8 @@
-<app-add-worker (addWorker)="onAddWorker($event)"></app-add-worker>
+<mat-button-toggle-group name="links" aria-label="links" style="margin-bottom: 1rem; margin-top: 1rem">
+  <mat-button-toggle routerLink="">Workers table</mat-button-toggle>
+  <mat-button-toggle routerLink="/text">Text page</mat-button-toggle>
+</mat-button-toggle-group>
 
-<div class="container">
-  <app-table-workers
-    [dataSource]="getDataSourceByType(myWorkerType.tech)"
-    title="IT Department"
-    (editWorker)="onEditWorker($event)"
-    (deleteWorker)="onDeleteWorker($event)"
-  ></app-table-workers>
+<div></div>
 
-  <app-table-workers
-    [dataSource]="getDataSourceByType(myWorkerType.sales)"
-    title="Sales Department"
-    (editWorker)="onEditWorker($event)"
-    (deleteWorker)="onDeleteWorker($event)"
-  ></app-table-workers>
-
-    <app-table-workers
-      [dataSource]="getDataSourceByType(myWorkerType.delivery)"
-      title="Delivery Department"
-      (editWorker)="onEditWorker($event)"
-      (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers>
-
-    <app-table-workers
-      [dataSource]="getDataSourceByType(myWorkerType.legal)"
-      title="Legal Department"
-      (editWorker)="onEditWorker($event)"
-      (deleteWorker)="onDeleteWorker($event)"
-    ></app-table-workers>
-</div>
+<router-outlet></router-outlet>

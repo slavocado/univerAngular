@@ -1,0 +1,33 @@
+<app-add-worker (addWorker)="onAddWorker($event)"></app-add-worker>
+
+<div class="container">
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.tech)"
+    title="IT Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.sales)"
+    title="Sales Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.delivery)"
+    title="Delivery Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+
+  <app-table-workers
+    [dataSource]="getDataSourceByType(myWorkerType.legal)"
+    title="Legal Department"
+    (editWorker)="onEditWorker($event)"
+    (deleteWorker)="onDeleteWorker($event)"
+  ></app-table-workers>
+</div>
+
+<router-outlet></router-outlet>

@@ -22,6 +22,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
 import {EditWorkerComponent, EditWorkerDialog} from './ui/table-workers/edit-worker/edit-worker.component';
 import {MatSortModule} from "@angular/material/sort";
+import { TextComponent } from './ui/text/text.component';
+import { MainComponent } from './ui/main/main.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,9 @@ import {MatSortModule} from "@angular/material/sort";
     AddWorkerComponent,
     AddWorkerDialog,
     EditWorkerComponent,
-    EditWorkerDialog
+    EditWorkerDialog,
+    TextComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import {MatSortModule} from "@angular/material/sort";
     TextMaskModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSortModule
+    MatSortModule,
+    AppRoutingModule,
+    MatButtonToggleModule
   ],
   providers: [
     MatDatepickerModule
